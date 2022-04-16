@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_app"
+    tools:context=".ui.onboarding.screens.SecondScreenOnboarding">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewSecondScreenOnboarding"
+        android:layout_width="399dp"
+        android:layout_height="334dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/second_image_onboarding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/firstTextSecondScreenOnboarding"
+        style="@style/FirstCustomTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:text="View the weather in one easy place"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewSecondScreenOnboarding" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/secondTextSecondScreenOnboarding"
+        style="@style/SecondCustomTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="With our app, you can be able to easily know what to expect on the go"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstTextSecondScreenOnboarding" />
+
+    <com.studying.howistheweather.utils.AccessButton
+        android:id="@+id/nextScreenButton"
+        android:layout_width="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:button_text="Next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondTextSecondScreenOnboarding"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AccessButton">
+        <attr name="button_text" format="string" />
+
+    </declare-styleable>
+
+    <declare-styleable name="AccessEditText">
+        <attr name="is_password" format="boolean" />
+        <attr name="change_hint" format="string" />
+        <attr name="input_type">
+            <flag name="text" value="0x0000001" />
+            <flag name="textEmailAddress" value="0x00000021" />
+            <flag name="textPassword" value="0x00000081" />
+            <flag name="number" value="0x00000002" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="LoadingView">
+        <attr name="visible" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/onboarding_nav"
+    app:startDestination="@id/firstScreenOnboarding">
+
+    <fragment
+        android:id="@+id/firstScreenOnboarding"
+        android:name="com.studying.howistheweather.ui.onboarding.screens.FirstScreenOnboarding"
+        android:label="fragment_first_screen"
+        tools:layout="@layout/fragment_first_screen_onboarding" >
+        <action
+            android:id="@+id/action_firstScreenOnboarding_to_secondScreenOnboarding"
+            app:destination="@id/secondScreenOnboarding"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondScreenOnboarding"
+        android:name="com.studying.howistheweather.ui.onboarding.screens.SecondScreenOnboarding"
+        android:label="fragment_first_screen"
+        tools:layout="@layout/fragment_second_screen_onboarding" >
+        <action
+            android:id="@+id/action_secondScreenOnboarding_to_thirdScreenOnboarding"
+            app:destination="@id/thirdScreenOnboarding"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdScreenOnboarding"
+        android:name="com.studying.howistheweather.ui.onboarding.screens.ThirdScreenOnboarding"
+        android:label="activity_third_screen_onboarding"
+        tools:layout="@layout/fragment_third_screen_onboarding" />
+</navigation>

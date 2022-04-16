@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp"
+    tools:background="@color/blue_app">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/currentWeatherButton"
+        android:layout_width="350dp"
+        android:layout_height="115dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/blue_app"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Malang" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/favoriteIconImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/favorite_drawable"
+            android:layout_marginTop="29dp"
+            android:layout_marginStart="100dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/temperatureTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/blue_app"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="25°/26°" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/weatherImageView"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="270dp"
+            android:layout_marginTop="16dp"
+            tools:src="@drawable/fluent_weather_partly_cloudy_day_24_regular" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/weatherNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="245dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/blue_app"
+            android:textSize="16sp"
+            tools:text="Heavy Rain"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
