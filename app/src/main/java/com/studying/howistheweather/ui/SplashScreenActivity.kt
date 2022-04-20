@@ -21,12 +21,20 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun goToNextScreen() {
-        Handler().postDelayed({
-            val intent = Intent(
-                this,
-                OnboardingActivity::class.java)
-            startActivity(intent)
-            finish()
-        }, 1600)
+        with(binding) {
+            logoImageView.alpha = 0f
+            firstTextView.alpha = 0f
+            secondTextView.alpha = 0f
+
+
+            firstTextView.animate().setDuration(1500).alpha(1f)
+            secondTextView.animate().setDuration(1500).alpha(1f)
+            logoImageView.animate().setDuration(1500).alpha(1f).withEndAction {
+                val intent = Intent(this@SplashScreenActivity, OnboardingActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                finish()
+            }
+        }
     }
-}
+    }

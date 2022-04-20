@@ -2,14 +2,28 @@ package com.studying.howistheweather.repositories
 
 import com.studying.howistheweather.models.apiModel.OpenWeatherResponse
 import com.studying.howistheweather.webClient.OpenWeatherService
-import retrofit2.Call
 
 class HomeRepository(
     private val retrofitService: OpenWeatherService,
-) {
+) : IHomeRepository {
 
-    fun getWeather(city: String, app_id: String, units: String) : Call<OpenWeatherResponse> =
-        retrofitService.getWeather(city, app_id, units)
+    override suspend fun getWeather(city: String) : OpenWeatherResponse {
+
+        try {
+            return retrofitService.getWeather(city)
+        } catch (error: Exception){
+            throw error
+        }
+    }
+
+    fun saveWeather(weather: OpenWeatherResponse){
+
+    }
+
+    fun getAllWeathers(): MutableList<OpenWeatherResponse> {
+        return mutableListOf()
+    }
+
 
 
 }

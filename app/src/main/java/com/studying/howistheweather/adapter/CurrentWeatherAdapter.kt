@@ -17,7 +17,7 @@ class CurrentWeatherAdapter(
 ) : RecyclerView.Adapter<CurrentWeatherAdapter.CurrentWeatherViewHolder>() {
 
     fun setWeathersList(weathers: List<OpenWeatherResponse>){
-        this.currentWeather = currentWeather.toMutableList()
+        this.currentWeather = weathers.toMutableList()
         notifyDataSetChanged()
     }
 
