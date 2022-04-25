@@ -18,81 +18,57 @@
         app:title="Welcome"
         app:titleTextColor="@color/blue_app" />
 
+    <com.studying.howistheweather.utils.AccessEditText
+        android:id="@+id/enterYourCityNameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:change_hint="Enter your city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cityNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="95dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/white"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toTopOf="@+id/temperatureTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterYourCityNameEditText"
+        tools:text="Amsterdam" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/temperatureTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="77dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/white"
+        android:textSize="70sp"
+        app:layout_constraintBottom_toTopOf="@+id/currentWeatherCity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityNameTextView"
+        tools:text="26°" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/buttonRecyclerView"
+        android:id="@+id/currentWeatherCity"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureTextView"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:itemCount="1"
         tools:listitem="@layout/access_current_weather" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="336dp"
-        android:layout_height="44dp"
-        android:layout_marginBottom="45dp"
-        app:cardBackgroundColor="@color/blue_app"
-        app:cardCornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/visualizeTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:fontFamily="@font/poppins_medium"
-            android:text="Visualize:"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/allButton"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="102dp"
-            android:layout_marginTop="3dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:fontFamily="@font/poppins_medium"
-            android:text="All"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="180dp"
-            android:layout_marginTop="3dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:fontFamily="@font/poppins_medium"
-            android:text="Only Favorites"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
-
-
-    </androidx.cardview.widget.CardView>
-
-    <com.studying.howistheweather.utils.AccessButton
-        android:id="@+id/addNewCity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:button_text="Add New City"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

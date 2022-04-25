@@ -6,9 +6,9 @@ data class OpenWeatherResponse(
     val main: Main,
     val name: String,
     val weather: List<Weather>,
+    val wind: Wind,
     var favorite: Boolean = false
 ) : Serializable {
-
 
 
 }

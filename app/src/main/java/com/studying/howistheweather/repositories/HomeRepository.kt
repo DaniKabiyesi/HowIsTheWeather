@@ -16,14 +16,6 @@ class HomeRepository(
         }
     }
 
-    fun saveWeather(weather: OpenWeatherResponse){
-
-    }
-
-    fun getAllWeathers(): MutableList<OpenWeatherResponse> {
-        return mutableListOf()
-    }
-
 
 
 }

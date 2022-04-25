@@ -1,10 +1,10 @@
 package com.studying.howistheweather.adapter
 
 import android.content.Context
+import android.graphics.Path
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.studying.howistheweather.R
 import com.studying.howistheweather.utils.AccessCurrentWeather
@@ -16,7 +16,7 @@ class CurrentWeatherAdapter(
     private var currentWeather: MutableList<OpenWeatherResponse>,
 ) : RecyclerView.Adapter<CurrentWeatherAdapter.CurrentWeatherViewHolder>() {
 
-    fun setWeathersList(weathers: List<OpenWeatherResponse>){
+    fun setWeathersList(weathers: MutableList<OpenWeatherResponse>){
         this.currentWeather = weathers.toMutableList()
         notifyDataSetChanged()
     }
@@ -36,27 +36,32 @@ class CurrentWeatherAdapter(
         position: Int,
     ) {
         val weather = currentWeather[position]
-        holder.weatherList.setCityName(weather.name)
-        holder.weatherList.setNameWeather(weather.weather[0].main)
-        holder.weatherList.setTemperature(weather.main.temp)
+        holder.weatherList.setWeatherName(weather.weather[0].main)
+//        holder.weatherList.setWeatherName(weather.weather[0].main)
+//        holder.weatherList.setTemperature(weather.main.temp)
+        holder.weatherList.setHumidity(weather.main.humidity)
+        holder.weatherList.setPressure(weather.main.pressure)
+        holder.weatherList.setWindSpeed(weather.wind.speed)
+        holder.weatherList.setTempMax(weather.main.temp_max)
+        holder.weatherList.setTempMin(weather.main.temp_min)
 
-        if (weather.favorite) {
-            holder.weatherList.setIsFavorite()
-        } else {
-            holder.weatherList.setIsNotFavorite()
-        }
+//        if (weather.favorite) {
+//            holder.weatherList.setIsFavorite()
+//        } else {
+//            holder.weatherList.setIsNotFavorite()
+//        }
 
-        holder.weatherList.listener = object : AccessCurrentWeatherListener {
-            override fun setFavoriteState() {
-                weather.favorite = !weather.favorite
-                notifyItemChanged(holder.adapterPosition)
-            }
-
-            override fun setCardViewImplementation() {
-                notify?.notifyActivity(weather)
-            }
-
-        }
+//        holder.weatherList.listener = object : AccessCurrentWeatherListener {
+//            override fun setFavoriteState() {
+//                weather.favorite = !weather.favorite
+//                notifyItemChanged(holder.adapterPosition)
+//            }
+//
+//            override fun setCardViewImplementation() {
+//                notify?.notifyActivity(weather)
+//            }
+//
+//        }
 
     }
 

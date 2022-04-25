@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="4dp"
+    android:padding="8dp"
     tools:background="@color/blue_app">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/currentWeatherButton"
-        android:layout_width="350dp"
-        android:layout_height="115dp"
+        android:id="@+id/currentWeatherCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="@color/white"
@@ -20,58 +20,218 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <View
+            android:id="@+id/line_1"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="70dp"
+            android:background="@color/blue_app" />
+
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/cityTextView"
+            android:id="@+id/weatherTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="25dp"
             android:fontFamily="@font/poppins_medium"
+            android:text="Weather"
             android:textColor="@color/blue_app"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:text="Malang" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/favoriteIconImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/favorite_drawable"
-            android:layout_marginTop="29dp"
-            android:layout_marginStart="100dp"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/temperatureTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="26dp"
-            android:layout_marginTop="60dp"
-            android:fontFamily="@font/poppins_light"
-            android:textColor="@color/blue_app"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            tools:text="25°/26°" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/weatherImageView"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="270dp"
-            android:layout_marginTop="16dp"
-            tools:src="@drawable/fluent_weather_partly_cloudy_day_24_regular" />
+            android:textSize="20sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/weatherNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="245dp"
-            android:layout_marginTop="60dp"
-            android:fontFamily="@font/poppins_light"
+            android:layout_marginStart="262dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/blue_app"
-            android:textSize="16sp"
-            tools:text="Heavy Rain"/>
+            android:textSize="20sp"
+            tools:text="Drizzle" />
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/weatherImageView"
+            android:layout_marginTop="10dp"
+            android:layout_width="47dp"
+            android:layout_height="59dp"
+            android:src="@drawable/fluent_temperature_24_regular" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/humidityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="95dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Humidity"
+            android:textColor="@color/blue_app"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/line_2"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="140dp"
+            android:background="@color/blue_app" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/humidityNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="270dp"
+            android:layout_marginTop="95dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/blue_app"
+            android:textSize="20sp"
+            tools:text="26°C" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/humidityImageView"
+            android:layout_width="47dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="75dp"
+            android:src="@drawable/fluent_temperature_24_regular" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pressureTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="160dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Pressure"
+            android:textColor="@color/blue_app"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/line_3"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="210dp"
+            android:background="@color/blue_app" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pressureNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="270dp"
+            android:layout_marginTop="160dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/blue_app"
+            android:textSize="20sp"
+            tools:text="26°C" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pressureImageView"
+            android:layout_marginTop="145dp"
+            android:layout_width="47dp"
+            android:layout_height="59dp"
+            android:src="@drawable/fluent_temperature_24_regular" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/windSpeedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="230dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Wind Speed"
+            android:textColor="@color/blue_app"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/line_4"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="275dp"
+            android:background="@color/blue_app" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/windSpeedNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="270dp"
+            android:layout_marginTop="230dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/blue_app"
+            android:textSize="20sp"
+            tools:text="26°C" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/windSpeedImageView"
+            android:layout_marginTop="215dp"
+            android:layout_width="47dp"
+            android:layout_height="59dp"
+            android:src="@drawable/fluent_temperature_24_regular" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tempMaxTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="295dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Temp. Max."
+            android:textColor="@color/blue_app"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/line_5"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="340dp"
+            android:background="@color/blue_app" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tempMaxNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="270dp"
+            android:layout_marginTop="295dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/blue_app"
+            android:textSize="20sp"
+            tools:text="26°C" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tempMaxImageView"
+            android:layout_marginTop="280dp"
+            android:layout_width="47dp"
+            android:layout_height="59dp"
+            android:src="@drawable/fluent_temperature_24_regular" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tempMinTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="355dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Temp. Min."
+            android:textColor="@color/blue_app"
+            android:textSize="20sp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tempMinNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="270dp"
+            android:layout_marginTop="355dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/blue_app"
+            android:textSize="20sp"
+            tools:text="26°C" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tempMinImageView"
+            android:layout_marginTop="340dp"
+            android:layout_width="47dp"
+            android:layout_height="59dp"
+            android:src="@drawable/fluent_temperature_24_regular" />
 
     </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

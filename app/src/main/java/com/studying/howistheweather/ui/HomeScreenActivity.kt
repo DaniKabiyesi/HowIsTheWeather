@@ -2,20 +2,14 @@ package com.studying.howistheweather.ui
 
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.studying.howistheweather.adapter.CurrentWeatherAdapter
-import com.studying.howistheweather.adapter.CurrentWeatherAdapterInterface
 import com.studying.howistheweather.databinding.ActivityHomeScreenBinding
 import com.studying.howistheweather.models.apiModel.OpenWeatherResponse
-import com.studying.howistheweather.repositories.HomeRepository
 import com.studying.howistheweather.viewmodel.main.HomeViewModel
 import com.studying.howistheweather.viewmodel.main.HomeViewModelFactory
-import com.studying.howistheweather.webClient.WeatherHomeRetrofit
 
 class HomeScreenActivity : AppCompatActivity() {
 
@@ -23,8 +17,7 @@ class HomeScreenActivity : AppCompatActivity() {
     lateinit var viewModel: HomeViewModel
     private val currentWeather: MutableList<OpenWeatherResponse> = mutableListOf()
     private val mAdapter = CurrentWeatherAdapter(this, currentWeather)
-
-
+//    private lateinit var myWeather: OpenWeatherResponse
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,13 +28,14 @@ class HomeScreenActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, HomeViewModelFactory())[HomeViewModel::class.java]
         setObservers()
 
-        viewModel.getWeathers("Rio de Janeiro")
+        viewModel.getWeathers("Porto")
+//        viewModel.getWeathers("London")
 
 
     }
 
     private fun setUpRecyclerView() {
-        val recyclerWeather = binding.buttonRecyclerView
+        val recyclerWeather = binding.currentWeatherCity
         recyclerWeather.adapter = mAdapter
 
 //        mAdapter.notify = object : CurrentWeatherAdapterInterface {
@@ -58,13 +52,23 @@ class HomeScreenActivity : AppCompatActivity() {
 
     private fun setObservers() {
         viewModel.weatherList.observe(this) {
-            mAdapter.setWeathersList(it)
+            mAdapter.setWeathersList(mutableListOf(it))
+            setWeatherInfo(it)
         }
 
         viewModel.weatherListErrorResponse.observe(this, Observer {
             Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
         })
     }
+
+    private fun setWeatherInfo(weather: OpenWeatherResponse){
+        binding.cityNameTextView.text = weather.name
+        binding.temperatureTextView.text = weather.main.temp.toInt().toString()
+    }
+
+
+
+
 
 
 //    private fun viewModelWeatherList(): Unit {
