@@ -28,10 +28,8 @@ class HomeScreenActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, HomeViewModelFactory())[HomeViewModel::class.java]
         setObservers()
 
-        viewModel.getWeathers("Porto")
+        getCityName()
 //        viewModel.getWeathers("London")
-
-
     }
 
     private fun setUpRecyclerView() {
@@ -49,7 +47,6 @@ class HomeScreenActivity : AppCompatActivity() {
 
     }
 
-
     private fun setObservers() {
         viewModel.weatherList.observe(this) {
             mAdapter.setWeathersList(mutableListOf(it))
@@ -64,6 +61,16 @@ class HomeScreenActivity : AppCompatActivity() {
     private fun setWeatherInfo(weather: OpenWeatherResponse){
         binding.cityNameTextView.text = weather.name
         binding.temperatureTextView.text = weather.main.temp.toInt().toString()
+    }
+
+    private fun getCityName(){
+        binding.searchBtn.setOnClickListener {
+            if(binding.enterYourCityNameEditText.isValid()){
+                viewModel.getWeathers("Porto")
+            } else{
+                Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
 

@@ -43,8 +43,8 @@ class AccessEditText @JvmOverloads constructor(
         }
     }
 
-            fun isValid(): Boolean{
-                return this.binding.accessHintEditText.text!!.isNotEmpty()
-            }
+    fun isValid(): Boolean {
+        return this.binding.accessHintEditText.text!!.isNotEmpty()
+    }
 }
 

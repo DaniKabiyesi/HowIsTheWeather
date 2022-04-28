@@ -23,9 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:focusable="true"
         app:change_hint="Enter your city"
+        app:input_type="textPassword"
+        app:is_password="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -48,7 +48,9 @@
         android:id="@+id/temperatureTextView"
         android:layout_width="wrap_content"
         android:layout_height="77dp"
+        android:layout_marginBottom="50dp"
         android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
         android:textColor="@color/white"
         android:textSize="70sp"
         app:layout_constraintBottom_toTopOf="@+id/currentWeatherCity"
@@ -62,13 +64,24 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/temperatureTextView"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:itemCount="1"
         tools:listitem="@layout/access_current_weather" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/searchBtn"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/access_button"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Search"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterYourCityNameEditText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

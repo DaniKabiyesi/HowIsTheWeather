@@ -28,6 +28,10 @@ class HomeViewModel (private val repository: IHomeRepository) : ViewModel() {
         }
     }
 
+    fun getCityWeather(){
+
+    }
+
 
 
 

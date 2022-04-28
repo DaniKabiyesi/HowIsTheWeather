@@ -1,15 +1,13 @@
 package com.studying.howistheweather.adapter
 
 import android.content.Context
-import android.graphics.Path
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.studying.howistheweather.R
-import com.studying.howistheweather.utils.AccessCurrentWeather
-import com.studying.howistheweather.utils.AccessCurrentWeatherListener
 import com.studying.howistheweather.models.apiModel.OpenWeatherResponse
+import com.studying.howistheweather.utils.AccessCurrentWeather
 
 class CurrentWeatherAdapter(
     private val context: Context,
