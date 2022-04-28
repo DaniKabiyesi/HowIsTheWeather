@@ -3,6 +3,7 @@ package com.studying.howistheweather.ui
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.studying.howistheweather.adapter.CurrentWeatherAdapter
@@ -27,8 +28,11 @@ class HomeScreenActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this, HomeViewModelFactory())[HomeViewModel::class.java]
         setObservers()
+        getCityName(binding.enterYourCityNameEditText.toString())
 
-        getCityName()
+//        getCityName(binding.enterYourCityNameEditText.myCity()).
+
+
 //        viewModel.getWeathers("London")
     }
 
@@ -51,6 +55,7 @@ class HomeScreenActivity : AppCompatActivity() {
         viewModel.weatherList.observe(this) {
             mAdapter.setWeathersList(mutableListOf(it))
             setWeatherInfo(it)
+
         }
 
         viewModel.weatherListErrorResponse.observe(this, Observer {
@@ -58,24 +63,23 @@ class HomeScreenActivity : AppCompatActivity() {
         })
     }
 
-    private fun setWeatherInfo(weather: OpenWeatherResponse){
-        binding.cityNameTextView.text = weather.name
-        binding.temperatureTextView.text = weather.main.temp.toInt().toString()
+    private fun setWeatherInfo(weather: OpenWeatherResponse) {
+        binding.apply {
+            cityNameTextView.text = weather.name
+            temperatureTextView.text = weather.main.temp.toInt().toString()
+        }
     }
 
-    private fun getCityName(){
+    private fun getCityName(city: String) {
+        val myCity =
         binding.searchBtn.setOnClickListener {
-            if(binding.enterYourCityNameEditText.isValid()){
-                viewModel.getWeathers("Porto")
-            } else{
+            if (binding.enterYourCityNameEditText.text.isNotBlank()) {
+                viewModel.getWeathers(city)
+            } else {
                 Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
             }
         }
     }
-
-
-
-
 
 
 //    private fun viewModelWeatherList(): Unit {

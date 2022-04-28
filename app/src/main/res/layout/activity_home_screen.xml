@@ -18,14 +18,29 @@
         app:title="Welcome"
         app:titleTextColor="@color/blue_app" />
 
-    <com.studying.howistheweather.utils.AccessEditText
+    <!--    <com.studying.howistheweather.utils.AccessEditText-->
+    <!--        android:id="@+id/enterYourCityNameEditText"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        app:change_hint="Enter your city"-->
+    <!--        app:input_type="textPassword"-->
+    <!--        app:is_password="false"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/toolbar" />-->
+
+    <EditText
         android:id="@+id/enterYourCityNameEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
+        android:hint="Enter your city"
+        android:paddingStart="10dp"
+        android:textColorHint="@color/black"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:change_hint="Enter your city"
-        app:input_type="textPassword"
-        app:is_password="false"
+        android:layout_marginTop="24dp"
+        android:autofillHints="no"
+        android:background="@drawable/access_edit_text"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -34,25 +49,24 @@
         android:id="@+id/cityNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="95dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/poppins_medium"
         android:textColor="@color/white"
-        android:textSize="27sp"
+        android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/temperatureTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterYourCityNameEditText"
+        app:layout_constraintTop_toBottomOf="@+id/searchBtn"
         tools:text="Amsterdam" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/temperatureTextView"
         android:layout_width="wrap_content"
-        android:layout_height="77dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:fontFamily="@font/poppins_medium"
-        android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="70sp"
+        android:textSize="54sp"
         app:layout_constraintBottom_toTopOf="@+id/currentWeatherCity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,11 +77,12 @@
         android:id="@+id/currentWeatherCity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureTextView"
         tools:itemCount="1"
         tools:listitem="@layout/access_current_weather" />
 
@@ -75,9 +90,11 @@
         android:id="@+id/searchBtn"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@drawable/access_button"
         android:fontFamily="@font/poppins_medium"
         android:text="Search"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

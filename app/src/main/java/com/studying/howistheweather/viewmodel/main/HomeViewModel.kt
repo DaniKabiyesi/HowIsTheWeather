@@ -18,7 +18,7 @@ class HomeViewModel (private val repository: IHomeRepository) : ViewModel() {
 
     fun getWeathers(
         city: String
-    ) = viewModelScope.launch {
+    ) = viewModelScope.launch{
         try {
             val response = repository.getWeather(city)
             _weatherList.value = response

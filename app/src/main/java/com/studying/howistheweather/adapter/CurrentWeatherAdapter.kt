@@ -63,7 +63,7 @@ class CurrentWeatherAdapter(
 
     }
 
-    override fun getItemCount(): Int = currentWeather.size
+    override fun getItemCount(): Int = 1
 
     inner class CurrentWeatherViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val weatherList: AccessCurrentWeather =
