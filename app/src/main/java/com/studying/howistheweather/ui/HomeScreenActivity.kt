@@ -48,7 +48,7 @@ class HomeScreenActivity : AppCompatActivity() {
     private fun setWeatherInfo(weather: OpenWeatherResponse) {
         binding.apply {
             cityNameTextView.text = weather.name
-            temperatureTextView.text = "${weather.main.temp.toInt()}°C"
+            temperatureTextView.text = "${weather.main.temp.toInt()} °C"
         }
     }
 
