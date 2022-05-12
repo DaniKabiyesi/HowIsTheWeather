@@ -63,7 +63,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="95dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Humidity"
+            android:text="@string/humidity"
             android:textColor="@color/blue_app"
             android:textSize="20sp" />
 
@@ -99,7 +99,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="160dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Pressure"
+            android:text="@string/pressure"
             android:textColor="@color/blue_app"
             android:textSize="20sp" />
 
@@ -135,7 +135,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="230dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Wind Speed"
+            android:text="@string/wind_speed"
             android:textColor="@color/blue_app"
             android:textSize="20sp" />
 
@@ -172,7 +172,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="295dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Temp. Max."
+            android:text="@string/temp_max"
             android:textColor="@color/blue_app"
             android:textSize="20sp" />
 
@@ -208,7 +208,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="355dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Temp. Min."
+            android:text="@string/temp_min"
             android:textColor="@color/blue_app"
             android:textSize="20sp" />
 

@@ -15,7 +15,8 @@
             android:id="@+id/logoImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="160dp"
+            app:layout_constraintBottom_toTopOf="@+id/firstTextView"
             android:src="@drawable/logo_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.516"
@@ -24,6 +25,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/firstTextView"
+            app:layout_constraintBottom_toTopOf="@+id/loginEditText"
             android:layout_marginTop="320dp"
             style="@style/splashCustomTextView"
             android:layout_width="wrap_content"
@@ -61,7 +63,7 @@
 
         <com.studying.howistheweather.utils.AccessButton
             android:id="@+id/accessButton"
-            android:layout_width="293dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             android:clickable="true"

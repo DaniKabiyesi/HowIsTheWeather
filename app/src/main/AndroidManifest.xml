@@ -12,15 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HowIsTheWeather">
         <activity
-            android:name=".ui.CityWeatherInfoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.NewWeatherCityActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.WeatherInfoActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.HomeScreenActivity"
             android:exported="false" />
         <activity

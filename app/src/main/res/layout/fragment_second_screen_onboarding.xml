@@ -11,8 +11,11 @@
         android:id="@+id/imageViewSecondScreenOnboarding"
         android:layout_width="399dp"
         android:layout_height="334dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
         android:src="@drawable/second_image_onboarding"
+        app:layout_constraintBottom_toTopOf="@+id/firstTextSecondScreenOnboarding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,10 +25,13 @@
         style="@style/FirstCustomTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="70dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center"
         android:text="View the weather in one easy place"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/secondTextSecondScreenOnboarding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewSecondScreenOnboarding" />
@@ -35,11 +41,14 @@
         style="@style/SecondCustomTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center"
         android:text="With our app, you can be able to easily know what to expect on the go"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/nextScreenButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstTextSecondScreenOnboarding" />
@@ -47,14 +56,16 @@
     <com.studying.howistheweather.utils.AccessButton
         android:id="@+id/nextScreenButton"
         android:layout_width="150dp"
-        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="70dp"
         android:clickable="true"
         android:focusable="true"
         app:button_text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secondTextSecondScreenOnboarding"/>
+        app:layout_constraintTop_toBottomOf="@+id/secondTextSecondScreenOnboarding" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

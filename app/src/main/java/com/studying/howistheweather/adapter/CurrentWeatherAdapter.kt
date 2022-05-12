@@ -1,77 +1,51 @@
 package com.studying.howistheweather.adapter
 
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
+import android.annotation.SuppressLint
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.studying.howistheweather.R
+import com.studying.howistheweather.extensions.inflate
 import com.studying.howistheweather.models.apiModel.OpenWeatherResponse
-import com.studying.howistheweather.utils.AccessCurrentWeather
 
 class CurrentWeatherAdapter(
-    private val context: Context,
-    private var currentWeather: MutableList<OpenWeatherResponse>,
-) : RecyclerView.Adapter<CurrentWeatherAdapter.CurrentWeatherViewHolder>() {
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    fun setWeathersList(weathers: MutableList<OpenWeatherResponse>){
-        this.currentWeather = weathers.toMutableList()
-        notifyDataSetChanged()
-    }
+    private var adapterList: MutableList<OpenWeatherResponse> = mutableListOf()
 
-    var notify: CurrentWeatherAdapterInterface? = null
+    override fun getItemCount(): Int = adapterList.size
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
     ): CurrentWeatherViewHolder {
-        val weatherView = LayoutInflater.from(context).inflate(R.layout.weather_list, parent, false)
-        return this.CurrentWeatherViewHolder(weatherView)
+        val weatherView = parent.inflate(R.layout.access_current_weather)
+        return CurrentWeatherViewHolder(weatherView)
     }
 
-    override fun onBindViewHolder(
-        holder: CurrentWeatherViewHolder,
+    fun populateAdapter(weatherList: MutableList<OpenWeatherResponse>){
+        this.adapterList = weatherList.toMutableList()
+        notifyDataSetChanged()
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val itemViewHolder = holder as CurrentWeatherViewHolder
+        val entity = adapterList[position]
+
+        bindItemViewHolder(itemViewHolder, entity, position)
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun bindItemViewHolder(
+        viewHolder: CurrentWeatherViewHolder,
+        item: OpenWeatherResponse,
         position: Int,
     ) {
-        val weather = currentWeather[position]
-        holder.weatherList.setWeatherName(weather.weather[0].main)
-//        holder.weatherList.setWeatherName(weather.weather[0].main)
-//        holder.weatherList.setTemperature(weather.main.temp)
-        holder.weatherList.setHumidity(weather.main.humidity)
-        holder.weatherList.setPressure(weather.main.pressure)
-        holder.weatherList.setWindSpeed(weather.wind.speed)
-        holder.weatherList.setTempMax(weather.main.temp_max)
-        holder.weatherList.setTempMin(weather.main.temp_min)
-
-//        if (weather.favorite) {
-//            holder.weatherList.setIsFavorite()
-//        } else {
-//            holder.weatherList.setIsNotFavorite()
-//        }
-
-//        holder.weatherList.listener = object : AccessCurrentWeatherListener {
-//            override fun setFavoriteState() {
-//                weather.favorite = !weather.favorite
-//                notifyItemChanged(holder.adapterPosition)
-//            }
-//
-//            override fun setCardViewImplementation() {
-//                notify?.notifyActivity(weather)
-//            }
-//
-//        }
-
+        viewHolder.weatherName.text = item.weather[0].main
+        viewHolder.humidityNumber.text = "${item.main.humidity}%"
+        viewHolder.pressureNumber.text = "${item.main.pressure}mb"
+        viewHolder.windSpeedNumber.text = "${item.wind.speed} Km/H"
+        viewHolder.tempMaxNumber.text = "${item.main.temp_max} °C"
+        viewHolder.tempMinNumber.text = "${item.main.temp_min} °C"
     }
 
-    override fun getItemCount(): Int = 1
-
-    inner class CurrentWeatherViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val weatherList: AccessCurrentWeather =
-            itemView.findViewById(R.id.listAccessCurrentWeather)
-    }
-
-}
-
-interface CurrentWeatherAdapterInterface {
-    fun notifyActivity(weather: OpenWeatherResponse)
 }

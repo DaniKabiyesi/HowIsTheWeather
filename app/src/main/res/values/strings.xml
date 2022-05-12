@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">HowIsTheWeather</string>
     <string name="name_app_string">HowIsTheWeather</string>
+    <string name="logo_image">logo_image</string>
+    <string name="welcome">Welcome!</string>
+    <string name="humidity">Humidity</string>
+    <string name="pressure">Pressure</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="temp_max">Temp. Max.</string>
+    <string name="temp_min">Temp. Min.</string>
 </resources>

@@ -1,11 +1,11 @@
-package com.studying.howistheweather.viewmodel.main
+package com.studying.howistheweather.viewmodel.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.studying.howistheweather.repositories.HomeRepository
 import com.studying.howistheweather.webClient.WeatherHomeRetrofit
 
-class HomeViewModelFactory () : ViewModelProvider.Factory{
+class HomeViewModelFactory() : ViewModelProvider.Factory{
 
     private val retrofitService = WeatherHomeRetrofit.getInstance()
 

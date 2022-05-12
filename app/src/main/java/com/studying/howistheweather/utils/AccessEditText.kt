@@ -47,7 +47,7 @@ class AccessEditText @JvmOverloads constructor(
         return this.binding.accessHintEditText.text!!.isNotEmpty()
     }
 
-    fun myCity() : String {
+    fun text() : String {
         return this.binding.accessHintEditText.text.toString()
     }
 }

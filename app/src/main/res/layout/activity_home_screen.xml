@@ -18,18 +18,6 @@
         app:title="Welcome"
         app:titleTextColor="@color/blue_app" />
 
-    <!--    <com.studying.howistheweather.utils.AccessEditText-->
-    <!--        android:id="@+id/enterYourCityNameEditText"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="24dp"-->
-    <!--        app:change_hint="Enter your city"-->
-    <!--        app:input_type="textPassword"-->
-    <!--        app:is_password="false"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/toolbar" />-->
-
     <EditText
         android:id="@+id/enterYourCityNameEditText"
         android:layout_width="320dp"
@@ -63,7 +51,7 @@
         android:id="@+id/temperatureTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/poppins_medium"
         android:textColor="@color/white"
         android:textSize="54sp"
@@ -76,10 +64,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/currentWeatherCity"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/temperatureTextView"
