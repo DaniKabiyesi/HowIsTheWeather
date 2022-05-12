@@ -8,4 +8,6 @@
     <string name="wind_speed">Wind Speed</string>
     <string name="temp_max">Temp. Max.</string>
     <string name="temp_min">Temp. Min.</string>
+    <string name="based_on_leading_professional_technology">Based on leading professional technology</string>
+    <string name="the_weather_app">The weather app also provides atmospheric pressure, weather conditions, visibility distance, relative humidity</string>
 </resources>
